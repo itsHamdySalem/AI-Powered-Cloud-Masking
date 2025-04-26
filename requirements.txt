@@ -1,0 +1,12 @@
+segmentation-models-pytorch
+albumentations
+rasterio
+torch
+numpy
+pandas
+scikit-learn
+tqdm
+matplotlib
+tensorboard
+opencv-python
+pathlib
