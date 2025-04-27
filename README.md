@@ -4,12 +4,12 @@ This project develops an AI-powered cloud masking system capable of automaticall
 
 ## Project Overview
 
-The system uses a combination of deep learning (U-Net) and classical machine learning (Random Forest) approaches to perform cloud segmentation on satellite imagery containing four spectral bands (Red, Green, Blue, and Infrared).
+The system uses a combination of deep learning (U-Net and DeepLabV3) and classical machine learning (Random Forest) approaches to perform cloud segmentation on satellite imagery containing four spectral bands (Red, Green, Blue, and Infrared).
 
 ## Features
 
 - Data exploration and preprocessing capabilities
-- U-Net deep learning model for cloud segmentation
+- U-Net and DeepLabV3 deep learning models for cloud segmentation
 - Random Forest classifier as a classical ML approach
 - Model evaluation using Dice coefficient
 - Inference script for generating predictions on new data
@@ -88,24 +88,6 @@ To run inference on new data:
 python run_inference.py --test_dir path/to/test/images --model_path models/cloud_mask_unet.pkl --output submission.csv
 ```
 
-## Models
-
-The project includes two trained models:
-
-1. **U-Net (Primary Model)**: A deep learning model based on the U-Net architecture, optimized for cloud segmentation.
-   - Located at: `models/cloud_mask_unet.pkl`
-   - Parameters: See `model_logs.txt`
-
-2. **Random Forest**: A classical machine learning approach using pixel-level features.
-   - Located at: `models/cloud_mask_rf.pkl`
-
 ## Evaluation
 
 The models are evaluated using the Dice coefficient, which measures the overlap between the predicted mask and the ground truth.
-
-## Development
-
-The models were developed and trained using Kaggle notebooks:
-
-- `cloud-masking-using-u-net.ipynb`: Development of the U-Net model
-- `cloud-masking-using-random-forest-classifier.ipynb`: Development of the Random Forest classifier
