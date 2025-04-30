@@ -4,12 +4,12 @@ This project develops an AI-powered cloud masking system capable of automaticall
 
 ## Project Overview
 
-The system uses a combination of deep learning (U-Net and DeepLabV3) and classical machine learning (Random Forest) approaches to perform cloud segmentation on satellite imagery containing four spectral bands (Red, Green, Blue, and Infrared).
+The system uses a combination of deep learning (U-Net and Deep Lab v3) and classical machine learning (Random Forest) approaches to perform cloud segmentation on satellite imagery containing four spectral bands (Red, Green, Blue, and Infrared).
 
 ## Features
 
 - Data exploration and preprocessing capabilities
-- U-Net and DeepLabV3 deep learning models for cloud segmentation
+- U-Net and Deep Lab v3 deep learning model3 for cloud segmentation
 - Random Forest classifier as a classical ML approach
 - Model evaluation using Dice coefficient
 - Inference script for generating predictions on new data
@@ -17,18 +17,17 @@ The system uses a combination of deep learning (U-Net and DeepLabV3) and classic
 ## Requirements
 
 ```txt
-segmentation-models-pytorch
 albumentations
-rasterio
-torch
+opencv-python
+matplotlib
 numpy
 pandas
+rasterio
+scikit-image
 scikit-learn
+segmentation-models-pytorch
+torch
 tqdm
-matplotlib
-tensorboard
-opencv-python
-pathlib
 ```
 
 ## Installation
@@ -46,48 +45,14 @@ pathlib
    pip install -r requirements.txt
    ```
 
-## Dataset
-
-The dataset consists of satellite images with four spectral bands (Red, Green, Blue, and Infrared) and corresponding cloud masks. The images are in TIFF format.
-
-## Usage
-
-### Data Exploration
-
-To analyze the dataset distribution and characteristics:
-
-```bash
-python data_exploration.py --images_dir path/to/images --masks_dir path/to/masks
-```
-
-This generates visualizations and statistics about cloud coverage, band distributions, and potential data quality issues.
-
-### Model Profiling
-
-To profile the model and get information about its parameters and operations:
-
-```bash
-python profile.py --model_path models/cloud_mask_unet.pkl --log_path model_logs.txt
-```
-
-### Model Evaluation
-
-To evaluate the model performance on validation data:
-
-```bash
-python evaluate_model.py --model_path models/cloud_mask_unet.pkl --images_dir path/to/val/images --masks_dir path/to/val/masks --output_dir evaluation_results
-```
-
-This generates detailed metrics, visualizations of best/worst predictions, and error pattern analysis.
-
-### Inference
-
-To run inference on new data:
-
-```bash
-python run_inference.py --test_dir path/to/test/images --model_path models/cloud_mask_unet.pkl --output submission.csv
-```
-
 ## Evaluation
 
 The models are evaluated using the Dice coefficient, which measures the overlap between the predicted mask and the ground truth.
+
+## Development
+
+The models were developed and trained using Kaggle notebooks:
+
+- `cloud-masking-using-u-net.ipynb`: Development of the U-Net model.
+- `cloud-masking-using-deep-lab-v3.ipynb`: Development of the Deep Lab v3 model.
+- `cloud-masking-using-random-forest-classifier.ipynb`: Development of the Random Forest classifier.
