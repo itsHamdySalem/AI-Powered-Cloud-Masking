@@ -1,0 +1,5 @@
+Model: UNet with ResNet34 backbone
+Total parameters: 26,010,241
+Operations: Profile data available in tensorboard logs
+Input shape: (4, 512, 512)
+Output shape: (1, 512, 512)
